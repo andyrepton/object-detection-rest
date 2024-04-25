@@ -98,13 +98,13 @@ User pulls only the necessary code into a separate function in prediction.py whi
     predict(data)
     ```
 1. Test the Flask application locally using the new prediction function from a Jupyter notebook
-   1. Run the Flask app (run_flask.ipynb provided - click play all cells) on your notebook server.
+   1. Run the Flask app (3_run_flask.ipynb provided - click play all cells) on your notebook server.
     ```
     !FLASK_APP=wsgi.py flask run
     ```
    1. Test the local Flask app (test_flask.ipynb provided) running on your notebook server.  Both curl commands and python code will be provided.
 !curl -X POST -H "Content-Type: application/json" --data '{"data": "hello world"}' http://localhost:5000/prediction
-   1. Stop the flask app  when complete. (Click the stop button in run_flask.ipynb)
+   1. Stop the flask app  when complete. (Click the stop button in 3_run_flask.ipynb)
 1. Save code to GitHub using push.  Be sure to include all relevant models, prediction python files, and any pertinent notebooks.
    1. Click GitHub plugin
    1. Click upload icon
