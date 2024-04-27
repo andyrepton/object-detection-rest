@@ -11,8 +11,8 @@ The purpose is to allow data science exploration to easily transition into deplo
 ├── LICENSE
 ├── requirements.txt        <- Used to install packages for s2i application
 ├── 0_start_here.ipynb      <- Instructional notebook
-├── 1_run_flask.ipynb       <- Notebook for running flask locally to test
-├── 2_test_flask.ipynb      <- Notebook for testing flask requests
+├── 1_run_flask.ipynb       <- Notebook for running Flask locally to test
+├── 2_test_flask.ipynb      <- Notebook for testing Flask requests
 ├── .gitignore              <- standard python gitignore
 ├── .s2i                    <- hidden folder for advanced s2i configuration
 │   └── environment         <- s2i environment settings
@@ -24,7 +24,7 @@ The purpose is to allow data science exploration to easily transition into deplo
 
 ## Using this template
 
-After creating a new repository using this template (clicking Use this template) up above, you will have a very simple s2i python project with notebooks included.
+After creating a new repository using this template (clicking Use this template) up above, you will have a very simple s2i Python project with notebooks included.
 
 ## One Time Project Set Up
 
@@ -89,7 +89,7 @@ Give other users access to the created project. https://github.com/{my-org}/{my-
 1. Open “Start Here” notebook (start_here.ipynb) that provides steps for experimentation with the goal of creating a prediction function.  (e.g. experiment, create function, test function)
 1. Extract prediction to a function in a Python file (prediction.py)
 The “Start Here” notebook includes instructions for extracting the function from the notebook into prediction.py.  Must be explanatory and easy to understand. In addition, we should offer sample prediction functions of popular libraries showing how to load serialized models from Python.
-User pulls only the necessary code into a separate function in prediction.py which is called from the flask app route handler.
+User pulls only the necessary code into a separate function in prediction.py which is called from the Flask app route handler.
 1. Update the `requirements.txt`
 1. Test prediction function from notebook
     ```python
@@ -102,10 +102,10 @@ User pulls only the necessary code into a separate function in prediction.py whi
     ```
     !FLASK_APP=wsgi.py flask run
     ```
-   1. Test the local Flask app (test_flask.ipynb provided) running on your notebook server.  Both curl commands and python code will be provided.
+   1. Test the local Flask app (test_flask.ipynb provided) running on your notebook server.  Both curl commands and Python code will be provided.
 !curl -X POST -H "Content-Type: application/json" --data '{"data": "hello world"}' http://localhost:5000/prediction
-   1. Stop the flask app  when complete. (Click the stop button in 3_run_flask.ipynb)
-1. Save code to GitHub using push.  Be sure to include all relevant models, prediction python files, and any pertinent notebooks.
+   1. Stop the Flask app when complete. (Click the stop button in 3_run_flask.ipynb)
+1. Save code to GitHub using push.  Be sure to include all relevant models, prediction Python files, and any pertinent notebooks.
    1. Click GitHub plugin
    1. Click upload icon
    1. Enter username and password/token
@@ -117,7 +117,7 @@ User pulls only the necessary code into a separate function in prediction.py whi
 To test changes, the application must be rebuilt and redeployed.If a webhook was configured, OpenShift will automatically deploy the updated service with the new model. Application deployment will show a rollout and new pods are spawned.  If no webhook was configured, the “Build” button must be pressed on the build config or triggered via command line.
 
 #### Test deployed application endpoint
-The application's service endpoint can be tested using cURL or python code from Jupyter notebooks or the terminal.
+The application's service endpoint can be tested using cURL or Python code from Jupyter notebooks or the terminal.
 ```
 !curl -X POST -H "Content-Type: application/json" --data '{"data": "hello world"}' http://rhods-project.apps.cluster/prediction
 ```
